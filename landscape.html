@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <img src="./img/stars.png" id="stars" alt="">
+        <img src="./img/moon.png" id="moon" alt="">
+        <img src="./img/mountains_behind.png" id="behind" alt="">
+        <h2 id="text">Anime<span>JS</span></h2>
+        <a href="#" id="btn">Explore</a>
+        <img src="./img/mountains_front.png" id="front" alt="">
+    </section>
+    
+    <script src="./js/script_min.js"></script>
+
+    <script>
+        var animation = anime.timeline({
+            autoplay: false
+        });
+
+        animation 
+        .add({
+            targets: '#btn',
+            top: '1500px',
+            duration: 500,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#stars',
+            top: '0px',
+            duration: 1000,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#behind',
+            bottom: '0px',
+            duration: 1000,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#moon',
+            top: '0px',
+            duration: 1000,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#front',
+            bottom: '0px',
+            duration: 1000,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#text',
+            marginRight: -100,
+            duration: 1000,
+            easing: 'easeInOutSine'
+        })
+
+        document.querySelector('#btn').onclick = animation.play;
+    </script>
+</body>
+</html>
